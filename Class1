@@ -1,0 +1,146 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Project1
+{
+    class Class2
+    {
+
+
+
+
+        String nome;
+        String sexo;
+        int idade;
+        float altura;
+        float peso;
+        float pesoIdeal;
+        int r;
+
+        void cadastro()
+        {
+
+
+
+            Console.WriteLine("Qual seu nome?");
+
+            nome = Console.ReadLine();
+
+            Console.WriteLine("Qual seu sexo? (M ou F)");
+
+            sexo = Console.ReadLine();
+
+            Console.WriteLine("Qual sua altura?");
+
+            altura = Console.Read();
+
+            Console.WriteLine("Qual sua idade?");
+
+            idade = Console.Read();
+
+            Console.WriteLine("Qual seu peso?");
+
+            peso = Console.Read();
+
+
+            Inicio();
+
+
+
+        }
+
+        void ChecarSexo()
+        {
+
+
+
+
+            if (sexo == ("M"))
+            {
+
+                ContaM();
+
+            }
+
+            else if (sexo == "F")
+            {
+
+                ContaF();
+
+            }
+
+            else
+            {
+                ChecarSexo();
+            }
+
+        }
+        void ContaM()
+        {
+
+
+
+
+            //( 72.7 * altura ) – 58
+
+            pesoIdeal = (float)((72.7 * altura) - 58);
+
+            Console.WriteLine("Seu peso ideal é " + pesoIdeal);
+
+
+            Inicio();
+        }
+        void ContaF()
+        {
+
+
+
+
+
+            // ( 62.1 * altura ) – 44.7
+
+            pesoIdeal = (float)((62.1 * altura) - 44.7);
+
+            Console.WriteLine("Seu peso ideal é " + pesoIdeal);
+
+
+            Inicio();
+
+
+
+        }
+
+        public void Inicio()
+        {
+
+
+
+            Console.WriteLine("[1] - Cadastro\n\n[2] - Checar Peso Ideal");
+
+            r = Console.Read();
+
+
+            switch (r)
+            {
+
+                case 1:
+                    cadastro();
+                    break;
+
+                case 2:
+
+                    ChecarSexo();
+                    break;
+
+            }
+        }
+
+
+
+
+    }
+}
+
